@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程反馈</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -57,6 +58,7 @@
                 <p>
                     <label for="advice">具体建议</label><br>
                     <textarea id="advice" name="advice" rows="4" maxlength="200" placeholder="说点什么"></textarea>
+                    <span id="advice-count" class="char-count">0 / 200</span>
                 </p>
                 <p>
                     <button type="submit">提交反馈</button>
@@ -67,5 +69,17 @@
     <footer>
         <p>软件开发总会实践·课程演示案例</p>
     </footer>
+    <script>
+        const advice = document.getElementById('advice');
+        const count = document.getElementById('advice-count');
+        const MAX = advice.maxLength;
+        function updateCount() {
+            const len = advice.value.length;
+            count.textContent = len + ' / ' + MAX;
+            count.classList.toggle('warn', len >= MAX * 0.9);
+            count.classList.toggle('full', len >= MAX);
+        }
+        advice.addEventListener('input', updateCount);
+    </script>
 </body>
 </html>
