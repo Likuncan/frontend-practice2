@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>寝室搬迁登记</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <header>
@@ -22,6 +23,48 @@
             <section id="form">
                 <h2>反馈表单</h2>
                 <p>（表单下一步填在这里）</p>
+                <form action="#" method="get">
+                <p>
+                    <label for="name">姓名（必须是真名）</label>
+                    <input type="text" id="name" name="name" placeholder="怎么称呼你" required>
+                </p>
+                <p>
+                    <label for="mail">邮箱</label>
+                    <input type="email" id="mail" name="mail" required>
+                </p>
+                <p>
+                    <label for="phone">电话号码</label>
+                    <input type="number" id="phone" name="phone" min="10000000000" max="99999999999" placeholder="请输入11位手机号" required>
+                </p>
+                <p>
+                    <label for="date">搬入信息</label>
+                    <input type="date" id="date" name="date" required>
+                </p>
+                <p>搬入楼栋（A栋 / B栋）</p>
+                <p>
+                    <label>
+                        <input type="radio" name="building" value="A" required> A栋
+                    </label>
+                    <label>
+                        <input type="radio" name="building" value="B"> B栋
+                    </label>
+                </p>
+                <p>
+                    <label for="floor">楼层</label>
+                    <select id="floor" name="floor" required>
+                        <option value="">请选择楼层</option>
+                        <option value="1">1层</option>
+                        <option value="2">2层</option>
+                        <option value="3">3层</option>
+                        <option value="4">4层</option>
+                        <option value="5">5层</option>
+                        <option value="6">6层</option>
+                    </select>
+                </p>
+                <p>
+                    <button type="submit">提交</button>
+                </p>
+            </form>    
             </section>
         </main>
         <footer>
